@@ -6,7 +6,22 @@
 #define MAX_FRAME_SIZE 7
 #define MAX_STRING_SIZE 5
 
-int LRU(int frame[],int inputString[],int size){
+
+struct LRUObj{
+	int id;
+	int ref;
+};
+
+int LRU(int frame[],int inputString[]){
+	
+	struct LRUObj arr[MAX_FRAME_SIZE];
+	for(size_t i=0;i<MAX_FRAME_SIZE;i++){
+		arr[i].id = frame[i];
+		arr[i].ref = 0;
+	}
+	for(size_t i=0;i<MAX_FRAME_SIZE;i++){
+		printf("%d--%d\t",arr[i].id,arr[i].ref);
+	}
 	
 }
 
@@ -29,4 +44,5 @@ void main(){
 		int num = rand() % 10;
 		inputString[i] = num;
 	}
+	LRU(frame,inputString);
 }
