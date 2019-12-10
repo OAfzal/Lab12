@@ -12,37 +12,70 @@ struct LRUObj{
 	int ref;
 };
 
+int findInArray(struct LRUObj frame[],int id){
+	int foundIndex = 0;
+	int found = 0;
+	for(size_t i = 0; i < MAX_FRAME_SIZE; i++){
+		if(id == frame[i].id){
+			frame[i].ref = 1;
+			found = 1;
+			break;
+		}
+	}
+	return found;	
+}
+
+int updateArr(struct LRUObj frame[], int head, int tail){
+	struct LRUObj temp;
+	for(size_t i = 0; i < MAX_FRAME_SIZE; i++){
+		temp.id = arr[tail].id;
+		temp.ref = a
+	}
+}
+
+
 int LRU(int frame[],int inputString[]){
-	
+
+	int pageFault = 0;
 	struct LRUObj arr[MAX_FRAME_SIZE];
+
+	//Init Struct for FRAME Struct
 	for(size_t i=0;i<MAX_FRAME_SIZE;i++){
 		arr[i].id = frame[i];
 		arr[i].ref = 0;
 	}
-	for(size_t i=0;i<MAX_FRAME_SIZE;i++){
-		printf("%d--%d\t",arr[i].id,arr[i].ref);
+	
+	for(size_t i=0;i < MAX_STRING_SIZE ;i++){
+		
+		int found = findInArray(arr,inputString[i]);
+		
+		//Already Exists in Array
+		if(found){
+			continue;
+		}
+		
+		//Page Fault Occurs
+		int tail = MAX_FRAME_SIZE - 1;
+		int head = 0;
+		
+		while(arr[head].ref != 0){
+		
+			
+		}
+		
+		if(arr[head].ref == 0){
+			arr[j].id == inputString[i];
+			arr[j].ref = 1;
+			break;
+		}
+		
+		for(size_t j = 0; j < MAX_FRAME_SIZE; j++){
+		
+			
+			for(size_t k = 0;k < MAX_FRAME_SIZE; k++){
+				if
+			}
+		}
 	}
 	
-}
-
-int FIFO(int frame[],int inputString[],int size){
-	
-}
-
-void main(){
-	
-	srand(time(NULL));
-	
-	int frame[MAX_FRAME_SIZE];
-	int inputString[MAX_STRING_SIZE];
-
-	for(size_t i = 0; i < MAX_FRAME_SIZE; i++){
-		int num = rand() % 10;
-		frame[i] = num;
-	}
-	for(size_t i = 0; i < MAX_STRING_SIZE; i++){
-		int num = rand() % 10;
-		inputString[i] = num;
-	}
-	LRU(frame,inputString);
 }
