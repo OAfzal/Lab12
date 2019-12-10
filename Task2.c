@@ -30,7 +30,7 @@ void FIFO(int reference_string[MAX_STRING_SIZE], int frames)
 			}
 		}
 		page_faults++;
-		if((page_faults <= frames) && (s = 0))
+		if((page_faults <= frames) && (s == 0))
 		{
 			temp[m] = reference_string[m];
 		}
