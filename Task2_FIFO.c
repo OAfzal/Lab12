@@ -3,7 +3,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-#define MAX_STRING_SIZE 5
+#define MAX_STRING_SIZE 10
 
 // defines FIFO page replacement algorithm
 
