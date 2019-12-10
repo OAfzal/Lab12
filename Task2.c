@@ -4,11 +4,8 @@
 #include <stdlib.h>
 
 #define MAX_FRAME_SIZE 7 // redundant - pls nuke
-#define MAX_STRING_SIZE 10
+#define MAX_STRING_SIZE 5
 
-int LRU(int frame[], int inputString[], int size){
-	
-}
 
 void FIFO(int reference_string[MAX_STRING_SIZE], int frames)
 {
